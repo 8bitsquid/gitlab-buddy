@@ -1,0 +1,22 @@
+{{if .Hosts}}
+Hosts:
+    {{range .Hosts}}
+    {{.Name}}:
+        url: {{.URL}}
+        token: {{.Token}}
+    {{end}}
+{{end}}
+{{if .LocalDirs}}
+LocalDirs:
+    {{range .LocalDirs}}
+    - {{.}}
+    {{end}}
+{{end}}
+{{if .log}}
+log:
+    {{range .log}}
+    level: {{.level}}
+    encoding: {{.encoding}}
+    outputPaths: {{.outputPaths}}
+    {{end}}
+{{end}}
