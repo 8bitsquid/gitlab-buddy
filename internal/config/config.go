@@ -50,6 +50,12 @@ func NewConfigFile(path string) (ConfigFile, error) {
 	}, nil
 }
 
+func ConfigExists() (bool, error) {
+	fileName := strings.Join([]string{CONFIG_FILE_NAME, CONFIG_FILE_EXT}, ".")
+	configPath := filepath.Join(ConfigDir, fileName)
+	return ExistsOnDisk(configPath)
+}
+
 //TODO: Implement config override
 func Load() error {
 
@@ -70,51 +76,59 @@ func LoadFile(configFile ConfigFile) error {
 
 	dirExists, fileExists := configExists(configFile)
 
+	// Attempt to create a new config file if it doesn't exists
 	if !fileExists {
 		if !dirExists {
 			err := os.Mkdir(configFile.Dir, 0777)
 			if err != nil {
 				log.Printf("Error creating config directory: %v\n", err)
 			}
-			log.Printf("Config directory created: %+v\n", configFile.Dir)
 		}
 
-		createConfig(configFile)
+		err := CreateConfig(configFile)
+		if err != nil {
+			return err
+		}
 	} else {
 		// If a config file is found, read it in.
 		err := viper.ReadInConfig()
 		if err != nil {
 			return err
 		}
-		log.Printf("Using config file: %v\n", viper.ConfigFileUsed())
 	}
 
-	log.Print("Config settings loaded")
+	// If only one host is defined, set it as default
+	hosts := viper.GetStringMap("hosts")
+	if len(hosts) == 1 {
+		for key := range hosts {
+			viper.Set("hosts.default", key)
+		}
+	}
+
 	return nil
 }
 
 // Create a new config file and read values into viper
-func createConfig(config ConfigFile) {
+func CreateConfig(config ConfigFile) error {
 
 	//TODO: Possibly add support for different config types?
-	tpl := template.Must(template.ParseFS(templatesFS, "yaml-config.tmpl"))
+	tpl := template.Must(template.ParseFS(templatesFS, "templates/yaml-config.tmpl"))
 
 	settings := viper.GetViper().AllSettings()
 
 	var tplBuffer bytes.Buffer
 	err := tpl.Execute(&tplBuffer, settings)
 	if err != nil {
-		log.Printf("Error building config template: %+v", err)
+		return err
 	}
 
 	fullPath := filepath.Join(config.Dir, config.Filename+"."+config.Ext)
 	e := viper.WriteConfigAs(fullPath)
 	if e != nil {
-		log.Printf("Error trying to write file: %+v", err)
-	} else {
-		fmt.Printf("New config file created")
+		return e
 	}
 
+	return nil
 }
 
 // TODO: Remove and replace with ExistsOnDisk method in internal/config/dir.go

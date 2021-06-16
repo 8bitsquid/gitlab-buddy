@@ -6,17 +6,17 @@ Hosts:
         token: {{.Token}}
     {{end}}
 {{end}}
-{{if .LocalDirs}}
-LocalDirs:
-    {{range .LocalDirs}}
+{{if .Local}}
+local:
+    {{range .Local}}
     - {{.}}
     {{end}}
 {{end}}
-{{if .log}}
-log:
-    {{range .log}}
-    level: {{.level}}
-    encoding: {{.encoding}}
-    outputPaths: {{.outputPaths}}
+{{if .Loggging}}
+loggging:
+    {{range .Loggging}}
+    level: {{.Level}}
+    encoding: {{.Rncoding}}
+    outputPaths: {{.OutputPaths}}
     {{end}}
 {{end}}

@@ -16,16 +16,10 @@ const (
 
 func NewURL(u string) (*url.URL, error) {
 	urlParts, err := url.Parse(u)
-	if err != nil {
-		return nil, err
-	}
-
-	if urlParts.Scheme != "" && urlParts.Host != "" {
+	if err != nil || urlParts.Scheme == "" || urlParts.Host == "" {
 		return nil, errors.Unwrap(fmt.Errorf("Invalid URL: %v", u))
 	}
-
 	zap.S().Debugw("NewURL", "scheme", urlParts.Scheme, "host", urlParts.Host)
-
 	return urlParts, nil
 }
 

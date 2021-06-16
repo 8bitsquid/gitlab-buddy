@@ -10,12 +10,15 @@ var migrateCmd = &cobra.Command{
 	Short: "Migrate content of Gitlab Projects or Groups.",
 	Long: `
 Migrate content of Gitlab Projects or Groups 
-(NOTE: Currently only branch migration is supported).
-	
+NOTE: Currently only branch migration is supported.
 	`,
 	Args: cobra.NoArgs,
+	Run: func(cmd *cobra.Command, args []string) {
+		initConfig()
+	},
 }
 
 func init() {
 	rootCmd.AddCommand(migrateCmd)
+
 }

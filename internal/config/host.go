@@ -1,6 +1,7 @@
 package config
 
 import (
+	"errors"
 	"net/url"
 	"strings"
 
@@ -21,7 +22,15 @@ type Host struct {
 	Type    string `yaml:"type" mapstructure:"type"`
 }
 
-func GetHost(name string) Host {
+func GetHost(name string) (*Host, error) {
+
+	if name == "" {
+		name = GetDefaultHost()
+		if name == "" {
+			return nil, errors.New("at least one host must be defined in config file")
+		}
+	}
+	
 	hostKey := "hosts." + name
 
 	hostConfig := viper.Sub(hostKey)
@@ -43,21 +52,22 @@ func GetHost(name string) Host {
 	var host Host
 	viper.UnmarshalKey(hostKey, &host)
 
-	// TODO: figure out how to sanitize logs easily with zap, so things like Tokens can never get logged accidently in prod
-	zap.S().Debugw("Host Config Unmarshalled", "Host", host)
+	return &host, nil
+}
 
-	return host
+func GetDefaultHost() string {
+	return viper.GetString("hosts.default")
 }
 
 func (h *Host) GetBaseURL() *url.URL {
 
 	hostURL, err := parseHost(h.URL)
 	if err != nil {
-		zap.S().Panicw("Invalid host url", "Host", h.URL)
+		zap.S().Panicw("Invalid host url", "host", h.URL)
 	}
 	apiPath, err := url.Parse(h.APIPath)
 	if err != nil {
-		zap.S().Panicw("Invalid API Path", "API Path", h.APIPath)
+		zap.S().Panicw("Invalid API Path", "api_path", h.APIPath)
 	}
 
 	return hostURL.ResolveReference(apiPath)

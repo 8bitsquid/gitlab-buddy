@@ -1,0 +1,288 @@
+2021-06-14T19:33:58.345-0500	[35mDEBUG[0m	cmd/root.go:91	replaced zap's global loggers
+2021-06-14T19:34:05.190-0500	[35mDEBUG[0m	cmd/root.go:91	replaced zap's global loggers
+2021-06-14T19:34:05.662-0500	[33mWARN[0m	gitlab-client/gitlab.go:47	Current Gitlab user is not an admin. API methods may be limited.
+2021-06-14T19:34:05.662-0500	[35mDEBUG[0m	gitlab-client/gitlab.go:62	New remote Gitlab client created	{"client": {}}
+2021-06-14T19:34:05.662-0500	[35mDEBUG[0m	cmd/branch.go:72	Branch migrate command	{"opts": {"Client":{},"Repo":null,"OldBranch":"master","NewBranch":"main","SetAsDefault":false,"SetAsProtectedDefault":true,"ArchiveOldBranch":true,"KeepOldBranch":false,"OmitMergeRequests":false,"MigrateSubmodules":false}}
+2021-06-15T12:38:28.557-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:38:34.292-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:38:37.687-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:38:37.728-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:38:37.768-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:38:37.816-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:38:41.329-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:38:41.329-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:26.137-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:40:38.080-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:40:45.363-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:45.364-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:45.787-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:47.379-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:47.434-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:47.499-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:47.811-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:40:47.811-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:07.887-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:42:12.108-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.164-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.212-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.236-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.306-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.372-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.764-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:12.944-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:13.085-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:13.241-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:13.397-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:15.595-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:15.659-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:15.716-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:15.804-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:26.355-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:26.404-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:26.484-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:32.757-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:32.912-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:33.053-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:33.193-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:33.333-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:33.480-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.157-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.212-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.267-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.299-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.372-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.427-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.939-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:42:46.939-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:43:57.344-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:44:09.742-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:09.790-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:09.870-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:09.871-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:09.918-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:09.990-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:10.933-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:11.522-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:11.678-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:11.834-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:11.974-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:13.806-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:13.870-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:13.909-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:13.926-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:13.990-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:44:14.036-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:33.800-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:33.800-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:47.541-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:45:51.464-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:51.541-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:52.729-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.096-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.143-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.232-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.375-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.376-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.519-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:45:54.639-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:34.722-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:34.722-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:38.509-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:47:39.992-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:47:46.432-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:46.433-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "i"}
+2021-06-15T12:47:46.520-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:46.520-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ij"}
+2021-06-15T12:47:59.849-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:59.849-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "iji"}
+2021-06-15T12:47:59.944-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:59.944-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijie"}
+2021-06-15T12:47:59.944-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:47:59.944-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijieh"}
+2021-06-15T12:48:00.025-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:00.025-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijiehf"}
+2021-06-15T12:48:08.369-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:08.369-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijiehf."}
+2021-06-15T12:48:12.450-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:12.450-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijiehf"}
+2021-06-15T12:48:12.627-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:12.627-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijieh"}
+2021-06-15T12:48:12.777-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:12.777-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ijie"}
+2021-06-15T12:48:12.930-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:12.930-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "iji"}
+2021-06-15T12:48:13.080-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:13.080-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "ij"}
+2021-06-15T12:48:13.243-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:13.243-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "i"}
+2021-06-15T12:48:14.320-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:14.320-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "h"}
+2021-06-15T12:48:14.447-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:14.447-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "he"}
+2021-06-15T12:48:14.800-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:14.800-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hel"}
+2021-06-15T12:48:14.939-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:14.939-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hell"}
+2021-06-15T12:48:15.120-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:48:15.120-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hello"}
+2021-06-15T12:48:15.609-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "hello", "host": ""}
+2021-06-15T12:48:15.609-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hello:"}
+2021-06-15T12:48:15.849-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "hello", "host": ""}
+2021-06-15T12:48:15.849-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hello:///"}
+2021-06-15T12:48:15.973-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "hello", "host": ""}
+2021-06-15T12:48:15.973-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hello:"}
+2021-06-15T12:50:24.572-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "hello", "host": ""}
+2021-06-15T12:50:24.572-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hello:"}
+2021-06-15T12:50:24.572-0500	[35mDEBUG[0m	tools/url.go:27	NewURL	{"scheme": "hello", "host": ""}
+2021-06-15T12:50:24.572-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "hello:"}
+2021-06-15T12:50:28.072-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:50:37.692-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:50:46.844-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:50:46.844-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "w"}
+2021-06-15T12:50:46.898-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:50:46.898-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "we"}
+2021-06-15T12:50:46.963-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:50:46.963-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "wef"}
+2021-06-15T12:51:05.124-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:51:05.124-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "wef"}
+2021-06-15T12:51:05.625-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:51:05.625-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "wef"}
+2021-06-15T12:51:24.339-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:51:24.339-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "wef"}
+2021-06-15T12:51:24.339-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "", "host": ""}
+2021-06-15T12:51:24.339-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "wef"}
+2021-06-15T12:51:28.411-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T12:51:33.459-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "https", "host": "gitlab.com"}
+2021-06-15T12:51:33.459-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "https://gitlab.com"}
+2021-06-15T12:51:35.285-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:35.340-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:35.397-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:38.164-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:38.587-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:38.692-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:38.748-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:39.836-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:39.976-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:40.109-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:40.246-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:40.389-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:40.536-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:41.300-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:41.500-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:41.656-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:41.795-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:42.372-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:42.669-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:42.797-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:44.164-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "n"}
+2021-06-15T12:51:44.164-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://n"}
+2021-06-15T12:51:44.260-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "no"}
+2021-06-15T12:51:44.260-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://no"}
+2021-06-15T12:51:44.372-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "not"}
+2021-06-15T12:51:44.372-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://not"}
+2021-06-15T12:51:44.453-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "noth"}
+2021-06-15T12:51:44.453-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://noth"}
+2021-06-15T12:51:44.517-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothi"}
+2021-06-15T12:51:44.517-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothi"}
+2021-06-15T12:51:44.603-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothin"}
+2021-06-15T12:51:44.603-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothin"}
+2021-06-15T12:51:44.716-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing"}
+2021-06-15T12:51:44.716-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing"}
+2021-06-15T12:51:45.876-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing."}
+2021-06-15T12:51:45.876-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing."}
+2021-06-15T12:51:46.004-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing.c"}
+2021-06-15T12:51:46.004-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing.c"}
+2021-06-15T12:51:46.100-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing.co"}
+2021-06-15T12:51:46.100-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing.co"}
+2021-06-15T12:51:46.164-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing.com"}
+2021-06-15T12:51:46.164-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing.com"}
+2021-06-15T12:51:48.668-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing.co"}
+2021-06-15T12:51:48.668-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing.co"}
+2021-06-15T12:51:49.170-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing.c"}
+2021-06-15T12:51:49.170-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing.c"}
+2021-06-15T12:51:49.253-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing."}
+2021-06-15T12:51:49.253-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing."}
+2021-06-15T12:51:49.337-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothing"}
+2021-06-15T12:51:49.337-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothing"}
+2021-06-15T12:51:49.420-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothin"}
+2021-06-15T12:51:49.420-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothin"}
+2021-06-15T12:51:49.504-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "nothi"}
+2021-06-15T12:51:49.504-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://nothi"}
+2021-06-15T12:51:49.589-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "noth"}
+2021-06-15T12:51:49.589-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://noth"}
+2021-06-15T12:51:49.672-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "not"}
+2021-06-15T12:51:49.672-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://not"}
+2021-06-15T12:51:49.756-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "no"}
+2021-06-15T12:51:49.756-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://no"}
+2021-06-15T12:51:49.838-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "http", "host": "n"}
+2021-06-15T12:51:49.838-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "http://n"}
+2021-06-15T12:51:49.924-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:50.007-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:50.091-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:50.175-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:50.258-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:50.342-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:50.426-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.044-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.079-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.181-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.243-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.302-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.404-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.468-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.652-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.772-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.846-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:51.901-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:52.013-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:52.013-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T12:51:52.013-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:46.173-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:46.339-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:46.479-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:46.619-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:46.759-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:46.907-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:47.063-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:49.416-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:49.417-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:52.717-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T13:39:55.263-0500	[35mDEBUG[0m	tools/url.go:23	NewURL	{"scheme": "https", "host": "gitlab.com"}
+2021-06-15T13:39:55.263-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": null, "url": "https://gitlab.com"}
+2021-06-15T13:39:58.556-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:58.621-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:39:58.736-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:00.830-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.003-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.567-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.615-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.710-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.807-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.808-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.854-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:01.958-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:02.053-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:02.255-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:02.374-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:02.471-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:02.510-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:03.542-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:03.542-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:03.542-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:34.432-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:34.433-0500	[35mDEBUG[0m	cmd/config.go:115	validating url	{"err": "Invalid URL", "url": "<nil>"}
+2021-06-15T13:40:39.055-0500	[35mDEBUG[0m	cmd/root.go:73	replaced zap's global loggers
+2021-06-15T13:40:40.656-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "gitlab.com"}
+2021-06-15T13:40:53.846-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "n"}
+2021-06-15T13:40:53.889-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "no"}
+2021-06-15T13:40:53.998-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "not"}
+2021-06-15T13:40:54.056-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "noth"}
+2021-06-15T13:40:54.103-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothi"}
+2021-06-15T13:40:54.206-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothin"}
+2021-06-15T13:40:54.286-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing"}
+2021-06-15T13:40:54.471-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing."}
+2021-06-15T13:40:54.590-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing.c"}
+2021-06-15T13:40:54.679-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing.co"}
+2021-06-15T13:40:54.719-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing.com"}
+2021-06-15T13:40:54.808-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing.com"}
+2021-06-15T13:40:54.808-0500	[35mDEBUG[0m	tools/url.go:22	NewURL	{"scheme": "https", "host": "nothing.com"}

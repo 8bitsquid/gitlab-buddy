@@ -23,7 +23,10 @@ type GitlabClient struct {
 }
 
 func NewClient(name string) (scm.IClient, error) {
-	host := config.GetHost(name)
+	host, err := config.GetHost(name)
+	if err != nil {
+		return nil, err
+	}
 	baseURL := host.GetBaseURL()
 
 	gitlabClient, err := gitlab.NewClient(host.Token, gitlab.WithBaseURL(baseURL.String()))

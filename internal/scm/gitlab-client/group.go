@@ -17,7 +17,7 @@ type GroupService struct {
 func (gs *GroupService) Get(groupID interface{}) (scm.IGroup, error) {
 	group, resp, err := gs.gc.client.Groups.GetGroup(groupID)
 	if err != nil {
-		zap.S().Errorw("HTTP response getting group", "HTTP Status", resp.StatusCode)
+		zap.S().Errorw("HTTP response getting group", "http_status", resp.StatusCode)
 		return nil, err
 	}
 
@@ -35,7 +35,7 @@ func (gs *GroupService) Create(group scm.IGroup) (scm.IGroup, error) {
 	}
 	newGroup, resp, err := gs.gc.client.Groups.CreateGroup(createOpts)
 	if err != nil {
-		zap.S().Errorw("Error creating group", "Group", group, "HTTP Status", resp.StatusCode, "Error", err)
+		zap.S().Errorw("Error creating group", "group", group, "http_status", resp.StatusCode, "error", err)
 		return nil, err
 	}
 
@@ -44,7 +44,7 @@ func (gs *GroupService) Create(group scm.IGroup) (scm.IGroup, error) {
 		ID:   newGroup.ID,
 	}
 
-	zap.S().Infow("Group group created", "Group", newGroup)
+	zap.S().Infow("Group group created", "group", newGroup)
 	return g, nil
 }
 
@@ -86,7 +86,7 @@ func (gs *GroupService) GetAllRepos(group scm.IGroup) []scm.IRepository {
 
 	pool, err := ants.NewPool(numAnts)
 	if err != nil {
-		zap.S().Errorw("Unable to initialize worker pool", "Num Workers", numAnts, "Error", err)
+		zap.S().Errorw("Unable to initialize worker pool", "num_workers", numAnts, "error", err)
 		return nil
 	}
 
@@ -94,7 +94,7 @@ func (gs *GroupService) GetAllRepos(group scm.IGroup) []scm.IRepository {
 
 	firstPage, resp, err := gs.getRepoListPage(group.GetID(), page)
 	if err != nil {
-		zap.S().Errorw("Error getting repo list page from group", "Group ID", group, "Page", page, "HTTP Status", resp.StatusCode, "Error", err)
+		zap.S().Errorw("Error getting repo list page from group", "group_id", group, "page", page, "http_status", resp.StatusCode, "error", err)
 		return nil
 	}
 
@@ -105,7 +105,7 @@ func (gs *GroupService) GetAllRepos(group scm.IGroup) []scm.IRepository {
 	numPages := resp.TotalPages
 	pagePool, err := ants.NewPool(scm.PAGINATOIN_CONCURRENCY_LIMIT, ants.WithExpiryDuration(scm.TIMEOUT))
 	if err != nil {
-		zap.S().Errorw("Error initializing repo list page worker pool", "Group ID", group, "Page", page, "Error", err)
+		zap.S().Errorw("Error initializing repo list page worker pool", "group_id", group, "page", page, "error", err)
 		return nil
 	}
 
@@ -116,7 +116,7 @@ func (gs *GroupService) GetAllRepos(group scm.IGroup) []scm.IRepository {
 		err = pagePool.Submit(func() {
 			nextPage, resp, err := gs.getRepoListPage(group.GetID(), p)
 			if err != nil {
-				zap.S().Errorw("Error getting repo list page from group", "Group ID", group, "Page", page, "HTTP Status", resp.StatusCode, "Error", err)
+				zap.S().Errorw("Error getting repo list page from group", "group_id", group, "page", page, "http_status", resp.StatusCode, "error", err)
 				return
 			}
 
@@ -124,7 +124,7 @@ func (gs *GroupService) GetAllRepos(group scm.IGroup) []scm.IRepository {
 			wg.Done()
 		})
 		if err != nil {
-			zap.S().Errorw("Error adding task to page pool for group repo list", "Group ID", group, "Page", page, "Error", err)
+			zap.S().Errorw("Error adding task to page pool for group repo list", "group_id", group, "page", page, "error", err)
 		}
 	}
 
@@ -141,6 +141,7 @@ func (gs *GroupService) getRepoListPage(group interface{}, page int) ([]*gitlab.
 			Page:    page,
 			PerPage: scm.PAGINATOIN_PER_PAGE,
 		},
+		IncludeSubgroups: gitlab.Bool(true),
 	}
 
 	return gs.gc.client.Groups.ListGroupProjects(group, opts)

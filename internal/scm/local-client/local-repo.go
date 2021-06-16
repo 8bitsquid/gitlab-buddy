@@ -55,7 +55,7 @@ func (gr *RepoService) Clone(repo scm.IRepository) (scm.IRepository, error) {
 
 	resp, err := gr.git.cmd.FromBaseDir(gr.git.baseDir).Clone().Repo(repo.GetCloneURL()).Exec()
 	if err != nil {
-		zap.S().Errorw("Error cloning repo", "Repo", repo, "Response", resp, "Error", err)
+		zap.S().Errorw("Error cloning repo", "Repo", repo, "Response", resp, "error", err)
 		return nil, err
 	}
 
@@ -70,13 +70,8 @@ func (gr *RepoService) Clone(repo scm.IRepository) (scm.IRepository, error) {
 }
 
 func (gr *RepoService) Push(repo scm.IRepository) error {
-	resp, err := gr.git.cmd.FromBaseDir(repo.GetPath()).Push().Repo(repo.GetName()).Exec()
-	if err != nil {
-		return err
-	}
-
-	zap.S().Debugw("Git Client", "PushRepo Response", resp)
-	return nil
+	_, err := gr.git.cmd.FromBaseDir(repo.GetPath()).Push().Repo(repo.GetName()).Exec()
+	return err
 }
 
 func (rs *RepoService) AddTag(repo scm.IRepository, tagName string, commit string, message string) (scm.ITag, error) {

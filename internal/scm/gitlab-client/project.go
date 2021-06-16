@@ -8,6 +8,7 @@ import (
 	"github.com/panjf2000/ants"
 	"github.com/xanzy/go-gitlab"
 	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/scm"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/tools"
 	"go.uber.org/zap"
 )
 
@@ -96,7 +97,7 @@ func (ps *ProjectService) AddTag(repo scm.IRepository, tagName string, branch st
 	// Create tag is doesn't exist
 	tag, resp, err := ps.gc.client.Tags.CreateTag(repo.GetID(), createOpts)
 	if err != nil {
-		zap.S().Errorw("Error creating repo tag", "Tag", tagName, "Repo", repo, "HTTP Status", resp.StatusCode)
+		zap.S().Errorw("Error creating repo tag", "tag", tagName, "repo", repo, "http_status", resp.StatusCode)
 		return nil, err
 	}
 
@@ -130,7 +131,7 @@ func (ps *ProjectService) ProtectTag(repo scm.IRepository, tagName string) (scm.
 
 	protectedTag, resp, err := ps.gc.client.ProtectedTags.ProtectRepositoryTags(repo.GetID(), protectOpts)
 	if err != nil {
-		zap.S().Errorw("Error protecting tag", "Tag", tagName, "Repo", repo.GetName(), "HTTP Status", resp.StatusCode)
+		zap.S().Errorw("Error protecting tag", "tag", tagName, "repo", repo.GetName(), "http_status", resp.StatusCode)
 		return nil, err
 	}
 
@@ -138,7 +139,7 @@ func (ps *ProjectService) ProtectTag(repo scm.IRepository, tagName string) (scm.
 		Name:      protectedTag.Name,
 		Protected: true,
 	}
-	zap.S().Infow("Tag protected", "Tag", tagName, "Repo", repo.GetName())
+	zap.S().Infow("Tag protected", "tag", tagName, "repo", repo.GetName())
 	return pt, nil
 }
 
@@ -162,14 +163,14 @@ func (ps *ProjectService) MoveBranch(repo scm.IRepository, oldBranch string, new
 
 	// TODO: Find better way to do this - gitlab search API is way too limited and doesn't support regex or conditional logic (despite docs saying so)
 	// Search for references to the newBranch in repo blobs
-	queryList := []string{"\"master\"", "'master'"}
+	queryList := tools.StringSandwich(oldBranch, "\"", "'")
 	queryOpts := &gitlab.SearchOptions{
 		PerPage: 100,
 	}
 	for _, query := range queryList {
 		blobs, resp, err := ps.gc.client.Search.BlobsByProject(pid, query, queryOpts)
 		if err != nil {
-			zap.S().Errorw("Error searching project", "HTTP Status", resp.StatusCode, "Error", err)
+			zap.S().Errorw("Error searching project", "http_status", resp.StatusCode, "error", err)
 			continue
 		}
 		if len(blobs) > 0 {
@@ -331,7 +332,7 @@ func (ps *ProjectService) UpdateMergeRequestsToNewBranch(repo scm.IRepository, o
 
 	pool, err := ants.NewPool(numAnts)
 	if err != nil {
-		zap.S().Errorw("Unable to initialize worker pool", "Num Workers", numAnts, "Error", err)
+		zap.S().Errorw("Unable to initialize worker pool", "num_workers", numAnts, "error", err)
 		return err
 	}
 	defer pool.Release()
@@ -381,15 +382,15 @@ func (ps *ProjectService) HasSubmodules(repo scm.IRepository) bool {
 func (ps *ProjectService) createProject(repo scm.IRepository) (scm.IRepository, error) {
 	proj := repo.(*Project)
 	createOpts := ps.getCreatePayload(proj)
-	zap.S().Debugw("Create Payload Recieved", "Payload", createOpts)
+	zap.S().Debugw("Create Payload Recieved", "payload", createOpts)
 
 	createdProj, resp, err := ps.gc.client.Projects.CreateProject(createOpts)
 	if err != nil {
-		zap.S().Errorw("Error creating repo", "HTTP Status", resp.StatusCode, "Repo", repo.GetName(), "Group ID", repo.GetGroupID(), "Host", ps.gc.client.BaseURL())
+		zap.S().Errorw("Error creating repo", "http_status", resp.StatusCode, "repo", repo.GetName(), "group_id", repo.GetGroupID(), "host", ps.gc.client.BaseURL())
 		return nil, err
 	}
 
-	zap.S().Infow("Repo created", "Repo", createdProj.PathWithNamespace, "Host", ps.gc.client.BaseURL())
+	zap.S().Infow("Repo created", "repo", createdProj.PathWithNamespace, "host", ps.gc.client.BaseURL())
 
 	return NewProject(createdProj), nil
 }

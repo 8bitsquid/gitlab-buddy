@@ -15,7 +15,7 @@ const (
 func getMigratePool() (*ants.Pool, error) {
 	pool, err := ants.NewPool(CONCURRENCY_LIMIT, ants.WithExpiryDuration(TIMEOUT))
 	if err != nil {
-		zap.S().Errorw("Error creating migration worker pool", "Error", err)
+		zap.S().Errorw("Error creating migration worker pool", "error", err)
 		return nil, err
 	}
 	return pool, nil

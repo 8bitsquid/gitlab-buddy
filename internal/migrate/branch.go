@@ -1,13 +1,14 @@
 package migrate
 
 import (
+	"strings"
 	"sync"
 
 	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/scm"
 	"go.uber.org/zap"
 )
 
-const ARCHIVE_REPO_TAG = "archive"
+const ARCHIVE_REPO_TAG = "archive-glb"
 
 type MigrateBranchOptions struct {
 	Client                scm.IClient
@@ -19,7 +20,7 @@ type MigrateBranchOptions struct {
 	ArchiveOldBranch      bool
 	KeepOldBranch         bool
 	OmitMergeRequests     bool
-	MigrateSubmodules     bool
+	MigrateSubmodules     bool // Not supported - branches with submoduels will be skipped
 }
 
 type MigrateBranchesInGroupOptions struct {
@@ -41,7 +42,7 @@ func MigrateBranch(opts MigrateBranchOptions) (scm.IBranch, error) {
 	// Move branch
 	branch, err := repos.MoveBranch(opts.Repo, opts.OldBranch, opts.NewBranch)
 	if err != nil {
-		zap.S().Errorw("Error moving branch", "Old Branch", opts.OldBranch, "New Branch", opts.NewBranch, "Repo", opts.Repo, "Error", err)
+		zap.S().Errorw("Error moving branch", "old_branch", opts.OldBranch, "new_branch", opts.NewBranch, "repo", opts.Repo, "error", err)
 		return nil, err
 	}
 
@@ -55,7 +56,7 @@ func MigrateBranch(opts MigrateBranchOptions) (scm.IBranch, error) {
 	if opts.SetAsDefault || opts.SetAsProtectedDefault {
 		branch, err = repos.SetDefaultBranch(opts.Repo, opts.NewBranch)
 		if err != nil {
-			zap.S().Errorw("Unable to set branch as default", "New Default", opts.NewBranch, "Repo", opts.Repo, "Error", err)
+			zap.S().Errorw("Unable to set branch as default", "new_default", opts.NewBranch, "repo", opts.Repo, "error", err)
 		}
 
 		// If manually setting a protected default branch,
@@ -63,7 +64,7 @@ func MigrateBranch(opts MigrateBranchOptions) (scm.IBranch, error) {
 		if opts.SetAsProtectedDefault && !branch.IsProtected() {
 			branch, err := repos.ProtectBranch(opts.Repo, opts.NewBranch)
 			if err != nil {
-				zap.S().Errorw("New default branch not protected", "New Default", opts.NewBranch, "Repo", opts.Repo, "Error", err)
+				zap.S().Errorw("New default branch not protected", "new_default", opts.NewBranch, "repo", opts.Repo, "error", err)
 			}
 			zap.S().Debugw("New default branch protected", "branch", branch)
 		}
@@ -71,21 +72,24 @@ func MigrateBranch(opts MigrateBranchOptions) (scm.IBranch, error) {
 
 	// Archived tags are always protected after creation
 	if opts.ArchiveOldBranch {
+		// Creates tag name relative to the migration
+		// e.g., archile-glb-oldBranch-to-newBranch
+		tagID := strings.Join([]string{ARCHIVE_REPO_TAG, opts.OldBranch, "to", opts.NewBranch}, "-")
 		// Add archive tag
-		_, err := repos.AddTag(opts.Repo, ARCHIVE_REPO_TAG, opts.OldBranch, "Archived during branch migration via gitlab-buddy")
+		_, err := repos.AddTag(opts.Repo, tagID, opts.OldBranch, "Archived during branch migration via gitlab-buddy")
 		if err != nil {
 			// If error adding tag, consider archiving a failure and return
-			zap.S().Errorw("Archive Old Branch Failed: Unable to create tag", "Branch", opts.OldBranch, "Repo", opts.Repo, "Error", err)
+			zap.S().Errorw("Archive Old Branch Failed: Unable to create tag", "branch", opts.OldBranch, "repo", opts.Repo, "error", err)
 			return nil, err
 		}
 
 		// protect archive tag
-		protTag, err := repos.ProtectTag(opts.Repo, ARCHIVE_REPO_TAG)
+		protTag, err := repos.ProtectTag(opts.Repo, tagID)
 		if err != nil {
-			zap.S().Errorw("Error protecting tag", "Tag", ARCHIVE_REPO_TAG, "Repo", opts.Repo, "Error", err)
+			zap.S().Errorw("Error protecting tag", "tag", tagID, "repo", opts.Repo, "error", err)
 			return nil, err
 		}
-		zap.S().Infow("Tag Protected", "Tag", protTag, "Repo", opts.Repo.GetName())
+		zap.S().Infow("Tag Protected", "tag", protTag, "repo", opts.Repo.GetName())
 	}
 
 	if !opts.KeepOldBranch {
@@ -128,7 +132,7 @@ func MigrateBranchesInGroup(opts MigrateBranchesInGroupOptions) error {
 				zap.S().Errorw("Error migrating branch in group repo", "migrate_group_branch", mOpts)
 				return
 			}
-			zap.S().Infow("Group repo branch migration successful", "repo", mOpts.Repo.GetName(), "old_branch", mOpts.OldBranch, "new_branch", branch, "Migration", mOpts)
+			zap.S().Infow("Group repo branch migration successful", "repo", mOpts.Repo.GetName(), "old_branch", mOpts.OldBranch, "new_branch", branch, "migration", mOpts)
 		})
 	}
 

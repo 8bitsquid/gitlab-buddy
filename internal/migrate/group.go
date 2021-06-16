@@ -28,7 +28,7 @@ func MigrateGroup(opts *MigrateGroupOptions) error {
 	if opts.autoCreateGroup {
 		toGroup, err := opts.toClient.GroupService().Create(opts.toGroup)
 		if err != nil {
-			zap.S().Errorw("Error creating new group for migration", "From Group", opts.fromGroup, "To Group", opts.toGroup)
+			zap.S().Errorw("Error creating new group for migration", "from_group", opts.fromGroup, "to_group", opts.toGroup)
 			return err
 		}
 		opts.toGroup = toGroup
@@ -38,7 +38,7 @@ func MigrateGroup(opts *MigrateGroupOptions) error {
 
 	pool, err := ants.NewPool(CONCURRENCY_LIMIT, ants.WithExpiryDuration(TIMEOUT))
 	if err != nil {
-		zap.S().Errorw("Error creating group migration worker pool", "From Group", opts.fromGroup, "To Group", opts.toGroup)
+		zap.S().Errorw("Error creating group migration worker pool", "from_group", opts.fromGroup, "to_group", opts.toGroup)
 		return err
 	}
 
@@ -51,15 +51,15 @@ func MigrateGroup(opts *MigrateGroupOptions) error {
 			groupRepo, err := toGroupService.CloneRepo(opts.toGroup, r)
 			wg.Done()
 			if err != nil {
-				zap.S().Errorw("Error migrating repo to group", "Repo", r, "Group", opts.toGroup, "Error", err)
+				zap.S().Errorw("Error migrating repo to group", "repo", r, "group", opts.toGroup, "error", err)
 				return
 			}
-			zap.S().Infow("Repo migrated to group", "Repo", groupRepo.GetName(), "Group", opts.toGroup)
+			zap.S().Infow("Repo migrated to group", "repo", groupRepo.GetName(), "group", opts.toGroup)
 		})
 	}
 
 	wg.Wait()
-	zap.S().Infow("Group migration successful", "From Client", opts.fromClient, "From Group", opts.fromGroup, "To Client", opts.toClient, "To Group", opts.toGroup)
+	zap.S().Infow("Group migration successful", "from_client", opts.fromClient, "from_group", opts.fromGroup, "To Client", opts.toClient, "to_group", opts.toGroup)
 
 	return nil
 }

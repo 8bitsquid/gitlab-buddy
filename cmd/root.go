@@ -16,17 +16,17 @@ var rootCmd = &cobra.Command{
 	Use:   "gitlab-buddy",
 	Short: "Management tool for Gitlab content",
 	Long: `
-=====================================================================
-|| NOTICE: Functionality is currently limited to branch migration. ||
-|| Have feature suggestions for this tool? Let the AppCloud team   ||
-|| know! Slack us as #appcloud-engcore                             ||
-=====================================================================
-
+	
 A management tool for Gitlab intended to reduce toil and automate tasks.
 'gitlab-buddy' will serve as a "catch-all" Gitlab automation tool. Although limited now,
 is was writting as an extensible framework for future development of complex tasks to integrate
 into automations and build flows.
 
+=====================================================================
+|| NOTICE: Functionality is currently limited to branch migration. ||
+|| Have feature suggestions for this tool? Let the AppCloud team   ||
+|| know! Slack us as #appcloud-engcore                             ||
+=====================================================================
 
 `,
 }
@@ -38,7 +38,7 @@ func Execute() {
 }
 
 func init() {
-	cobra.OnInitialize(initConfig)
+	// cobra.OnInitialize(initConfig)
 
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
@@ -47,8 +47,10 @@ func init() {
 }
 
 // initConfig reads in config file
+// This should be called at the sub-command level
+// some sub commands may not require a config file
 func initConfig() {
-	// Check if config exists
+	// Check if config flag was defined
 	if cfgFilePath != "" {
 		cf, err := config.NewConfigFile(cfgFilePath)
 		if err != nil {
@@ -60,6 +62,12 @@ func initConfig() {
 			return
 		}
 	} else {
+		if exists, _ := config.ConfigExists(); !exists {
+			err := configInitWizard()
+			if err != nil {
+				return
+			}
+		}
 		// TODO: Move this into main.go, so that CLI isn't the only easy entry point
 		// Attempt to load config file and/or defaults
 		// Don't panic if error to allow all defaults to get through

@@ -46,7 +46,7 @@ func (gc *GitCommand) build(command []string) []string {
 func (gc *GitCommand) Exec(command []string) (string, error) {
 	cmdSlice := gc.build(command)
 
-	zap.S().Debugw("Attempting exec of git", "Command", cmdSlice)
+	zap.S().Debugw("Attempting exec of git", "command", cmdSlice)
 	cmd := exec.Command(GIT_COMMAND, cmdSlice...)
 
 	var out bytes.Buffer
