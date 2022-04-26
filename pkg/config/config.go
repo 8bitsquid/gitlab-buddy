@@ -44,9 +44,9 @@ func NewConfigFile(path string) (ConfigFile, error) {
 	}
 
 	return ConfigFile{
-		Dir: dir,
+		Dir:      dir,
 		Filename: fparts[0],
-		Ext: fparts[1],
+		Ext:      fparts[1],
 	}, nil
 }
 
@@ -131,7 +131,7 @@ func CreateConfig(config ConfigFile) error {
 	return nil
 }
 
-// TODO: Remove and replace with ExistsOnDisk method in internal/config/dir.go
+// TODO: Remove and replace with ExistsOnDisk method in pkg/config/dir.go
 func configExists(file ConfigFile) (bool, bool) {
 	var dirExists bool
 	var fileExists bool

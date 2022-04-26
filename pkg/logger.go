@@ -1,8 +1,8 @@
-package internal
+package pkg
 
 import (
 	"github.com/spf13/viper"
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/config"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

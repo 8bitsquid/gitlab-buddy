@@ -22,7 +22,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/config"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/config"
 )
 
 // initCmd represents the init command
@@ -50,32 +50,31 @@ func init() {
 
 func configInitWizard() error {
 	i, _, _ := promptAddWhatClient()
-		if i == 0 {
-			host, err := promptAddGitlabClient()
-			if err != nil {
-				return err
-			}
+	if i == 0 {
+		host, err := promptAddGitlabClient()
+		if err != nil {
+			return err
+		}
 
-			viper.Set("hosts." + host["name"] + ".token", host["token"])
-			fileName := strings.Join([]string{config.CONFIG_FILE_NAME, config.CONFIG_FILE_EXT}, ".")
-			configPath := filepath.Join(config.ConfigDir, fileName)
+		viper.Set("hosts."+host["name"]+".token", host["token"])
+		fileName := strings.Join([]string{config.CONFIG_FILE_NAME, config.CONFIG_FILE_EXT}, ".")
+		configPath := filepath.Join(config.ConfigDir, fileName)
 
-			cfg, err := config.NewConfigFile(configPath)
-			if err != nil {
-				return err
-			}
-			
-			err = config.CreateConfig(cfg)
-			if err != nil {
-				return err
-			}
+		cfg, err := config.NewConfigFile(configPath)
+		if err != nil {
+			return err
+		}
 
-			fmt.Println(`
+		err = config.CreateConfig(cfg)
+		if err != nil {
+			return err
+		}
+
+		fmt.Println(`
 ###  Gitlab Buddy is configured and ready to go!
 ###  Type 'glb --help' to see what Gitlab Buddy can do.
 		`)
-		}
+	}
 
-		return nil
+	return nil
 }
-

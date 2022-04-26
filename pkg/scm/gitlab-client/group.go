@@ -6,7 +6,7 @@ import (
 
 	"github.com/panjf2000/ants"
 	"github.com/xanzy/go-gitlab"
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/scm"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/scm"
 	"go.uber.org/zap"
 )
 

@@ -6,8 +6,8 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/migrate"
-	gitlabclient "gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/scm/gitlab-client"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/migrate"
+	gitlabclient "gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/scm/gitlab-client"
 	"go.uber.org/zap"
 )
 
@@ -60,14 +60,14 @@ See [flags] below for details on options for handling branches during migration.
 		// MigrateBranchOptions are used in both single repo and group branch migrations
 		// Setting the repo level migrate options without a repo defined.
 		repoOpts := migrate.MigrateBranchOptions{
-			Client: client,
-			OldBranch: args[0],
-			NewBranch: args[1],
-			SetAsDefault: setDefault,
+			Client:                client,
+			OldBranch:             args[0],
+			NewBranch:             args[1],
+			SetAsDefault:          setDefault,
 			SetAsProtectedDefault: setProtectedDefault,
-			ArchiveOldBranch: archiveOldBranch,
-			KeepOldBranch: keepOldBranch,
-			OmitMergeRequests: omitMergeRequests,
+			ArchiveOldBranch:      archiveOldBranch,
+			KeepOldBranch:         keepOldBranch,
+			OmitMergeRequests:     omitMergeRequests,
 		}
 
 		if repo != "" {
@@ -92,10 +92,10 @@ See [flags] below for details on options for handling branches during migration.
 			}
 
 			// Embed repoOpts into group migration opts struct
-			
+
 			groupOpts := migrate.MigrateBranchesInGroupOptions{
 				Migrate: repoOpts,
-				Group: gitlabGroup,
+				Group:   gitlabGroup,
 			}
 
 			zap.S().Debugw("Group Migrate", "group_ops", groupOpts)
@@ -105,7 +105,6 @@ See [flags] below for details on options for handling branches during migration.
 				return err
 			}
 		}
-
 
 		return nil
 	},
@@ -122,5 +121,5 @@ func init() {
 	branchCmd.Flags().BoolVarP(&archiveOldBranch, "archive-old-branch", "a", true, "Archive the old branch under the protected 'archive' tag and delete the old branch. The 'archive' tag is created/protected if not already in repo.")
 	branchCmd.Flags().BoolVarP(&keepOldBranch, "keep-old-branch", "k", false, "Prevents old branch from being removed, as the old branch is removed by default")
 	branchCmd.Flags().BoolVarP(&omitMergeRequests, "omit-merge-requests", "o", false, "Prevents open merge requests from being migrated - targeting the new branch.")
-	
+
 }

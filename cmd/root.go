@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	glb "gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal"
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/config"
+	glb "gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/config"
 	"go.uber.org/zap"
 )
 

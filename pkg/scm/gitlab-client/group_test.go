@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/xanzy/go-gitlab"
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/scm"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/scm"
 )
 
 func TestGroupService_Get(t *testing.T) {

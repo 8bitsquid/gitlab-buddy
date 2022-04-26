@@ -4,7 +4,7 @@ import (
 	"strings"
 	"sync"
 
-	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/internal/scm"
+	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/scm"
 	"go.uber.org/zap"
 )
 
