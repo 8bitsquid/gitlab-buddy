@@ -3,7 +3,7 @@ package localclient
 import (
 	"github.com/spf13/afero"
 	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/config"
-	gitcmd "gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/pkg/git-cmd"
+	gitcmd "gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/git-cmd"
 	"gitlab.com/heb-engineering/teams/spm-eng/appcloud/tools/gitlab-buddy/pkg/scm"
 	"go.uber.org/zap"
 )
